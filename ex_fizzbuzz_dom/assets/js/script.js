@@ -7,17 +7,16 @@ const containerEl = document.querySelector('.container')
 for (let i = 1; i <= 100; i++) {
   
   //console.log(i % 3 === 0 && i % 5 === 0);
-  let markup;
-  let markupElement = document.createElement('div');
+  //let markup;
+  let markupElement = document.createElement('div'); // <div></div>
   markupElement.classList.add('box')
-
   //console.log(markupElement); 
   if (i % 15 === 0) {
     // per i numeri che sono sia multipli di 3 che di 5 stampi “FizzBuzz”.
     console.log('FizzBuzz');
     //markup = `<div class="box">FizzBuzz</div>`
     markupElement.append('FizzBuzz')
-    markupElement.classList.add('bg-blue')
+    //markupElement.classList.add('bg-blue')
     markupElement.style.backgroundColor = 'blue';
     //console.log(markupElement, 'it works');
   } else if (i % 3 === 0) {
@@ -25,7 +24,7 @@ for (let i = 1; i <= 100; i++) {
     console.log('Fizz');
     //markup = `<div class="box">Fizz</div>`
     markupElement.append('Fizz')
-    markupElement.classList.add('bg-red')
+    //markupElement.classList.add('bg-red')
     markupElement.style.backgroundColor = 'red';
   
   } else if (i % 5 === 0) {
@@ -53,6 +52,16 @@ for (let i = 1; i <= 100; i++) {
 }
 
 
+
+
+const ul = document.createElement('ul')
+//console.log(ul);
+const li = document.createElement('li')
+li.append('list item 1');
+//li.innerHTML = 'List item 1';
+//console.log(li); // <li>List item 1</li>
+ul.append(li)
+//console.log(ul);
 
 
 
