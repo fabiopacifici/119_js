@@ -171,8 +171,6 @@ console.log(count); // L'elemento 'mela' si verifica 3 volte nell'array.
 /*
 Challenge 5: Inverti un Array
 Descrizione: Crea un nuovo array inverso. Cicla attraverso l'array originale dalla fine all'inizio, e inserisci ogni elemento in inverso.
-
-
 */
 
 
