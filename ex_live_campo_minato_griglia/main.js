@@ -23,61 +23,72 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 
 
 // SETUP
+/* IIFE */
 
-// select the magic field
-const magicField = document.getElementById('field');
-// define max cells numbers
-//const cellsNumber = 100;
-// select the play button from the dom to start the game
-document.querySelector('form').addEventListener('submit', function (e) {
+/**
+ * Starts the game
+ */
+(function() {
+  console.log('hi there');
+  // select the magic field
+  const magicField = document.getElementById('field');
+  // define max cells numbers
+  //const cellsNumber = 100;
+  // select the play button from the dom to start the game
+  document.querySelector('form').addEventListener('submit', function (e) {
+    
+    // Bonus 
+    // step 1. prevent default behaviour
+    e.preventDefault();
+    // step 2. read the selected level
+    console.log(e.target.level.value);
+    const cellsNumber = e.target.level.value;
+    // step 3. use the selected level to generate the magic field
+    
+    
+    // STEPS
+    // Start the game
+    console.log('Start the game - show the magic field');
   
-  // Bonus 
-  // step 1. prevent default behaviour
-  e.preventDefault();
-  // step 2. read the selected level
-  console.log(e.target.level.value);
-  const cellsNumber = e.target.level.value;
-  // step 3. use the selected level to generate the magic field
+    generateMagicField(magicField, cellsNumber)
   
+  })
   
-  // STEPS
-  // Start the game
-  console.log('Start the game - show the magic field');
+})();
+
+
+/**
+ * 
+ * @param {*} fieldDomElement 
+ * @param {*} level 
+ */
+function generateMagicField(fieldDomElement, level) {
   // Empty the magic filed before adding new cells
-  magicField.innerHTML = '';
+  fieldDomElement.innerHTML = '';
   // generate the magic field 🍄
-  for (let i = 1; i <= cellsNumber; i++) {
+  for (let i = 1; i <= level; i++) {
 
     // generate the single cell
-    /* const nodeCellElement = document.createElement('div')
-    nodeCellElement.classList.add('cell')
-    nodeCellElement.innerText = i */
-    const nodeCellElement = generateMagicCell(i, cellsNumber);
+    const nodeCellElement = generateMagicCell(i, level);
 
     console.log(nodeCellElement);
 
 
     // add to the cell an event listener
-    /* nodeCellElement.addEventListener('click', function(e){
-      // add a active class to the clicked element
-      console.log(this, e); // this é il nodo della dom in questo contesto - e é l'evento triggerato
-      this.classList.toggle('bg-active');
-      // print into the console the cell number
-      console.log(this.innerText);
-    }) */
-    //console.log(nodeCellElement);
     attachEventToMagicCell(nodeCellElement)
 
-    magicField.insertAdjacentElement('beforeend', nodeCellElement)
+    fieldDomElement.insertAdjacentElement('beforeend', nodeCellElement)
 
 
   }
 
+}
 
 
-})
-
-
+/**
+ * 
+ * @param {*} node 
+ */
 function attachEventToMagicCell(node) {
   node.addEventListener('click', function (e) {
     // add a active class to the clicked element
@@ -88,7 +99,12 @@ function attachEventToMagicCell(node) {
   })
 }
 
-
+/**
+ * 
+ * @param {*} numb 
+ * @param {*} size 
+ * @returns 
+ */
 function generateMagicCell(numb, size) {
   const nodeCellElement = document.createElement('div')
   nodeCellElement.classList.add('cell')
