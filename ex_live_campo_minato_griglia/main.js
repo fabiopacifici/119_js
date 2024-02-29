@@ -96,6 +96,7 @@ function attachEventToMagicCell(node) {
     this.classList.toggle('bg-active');
     // print into the console the cell number
     console.log(this.innerText);
+    this.innerText = '🍄'
   })
 }
 
