@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    header{
+      display: flex;
+      justify-content: space-around;
+      padding: 0.5rem 0;
+    }
+  
+    .bg-active {
+      background-color: palegreen;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #field {
+      display: flex;
+      flex-wrap: wrap;
+      width: 50%;
+      margin: auto;
+
+      .cell {
+        width: calc(100% / 10);
+        aspect-ratio: 1;
+        flex-shrink: 0;
+        border: 1px solid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <header>
+    <div class="logo">LOGO</div>
+    <form>
+      <select name="level" id="level">
+        <option value="100">Easy</option>
+        <option value="81">Medium</option>
+        <option value="49">Hard</option>
+      </select>
+      <button type="submit" class="play">Start</button>
+    </form>
+  </header>
+
+  <main>
+
+
+    <div id="field"></div>
+
+
+  </main>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>

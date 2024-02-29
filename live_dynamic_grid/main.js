@@ -128,6 +128,8 @@ const randomNumbers = []
   // otherwise push it
   if (!randomNumbers.includes(randomNumber)) {
     randomNumbers.push(randomNumber)
+  } else {
+    i--
   }
 } */
 
@@ -170,9 +172,6 @@ function getRandomNumbers(){
 
 
 // Array(4) | after 11 iterations
-
-
-
 
 
 
