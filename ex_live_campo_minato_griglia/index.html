@@ -7,12 +7,18 @@
   <title>Document</title>
   <style>
 
-    header{
+
+    body {
+      background-color: #ededed;
+    }
+
+    header {
       display: flex;
       justify-content: space-around;
       padding: 0.5rem 0;
+      background-color: white;
     }
-  
+
     .bg-active {
       background-color: palegreen;
     }
@@ -21,6 +27,10 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    #game-over {
+      display: none;
     }
 
     #field {
@@ -34,6 +44,13 @@
         aspect-ratio: 1;
         flex-shrink: 0;
         border: 1px solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & span {
+          display: none;
+        }
       }
     }
   </style>
@@ -56,6 +73,9 @@
 
   <main>
 
+    <div id="game-over">
+      Game over <span>123</span>
+    </div>
 
     <div id="field"></div>
 
