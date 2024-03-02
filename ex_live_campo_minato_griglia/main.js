@@ -143,7 +143,6 @@ function attachEventToMagicCell(node) {
   node.addEventListener('click', handleClick)
 }
 
-
 function handleClick(e) {
   // add a active class to the clicked element
   console.log(this, e); // this é il nodo della dom in questo contesto - e é l'evento triggerato

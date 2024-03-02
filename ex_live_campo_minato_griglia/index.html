@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-
-
     body {
       background-color: #ededed;
     }
@@ -31,6 +29,26 @@
 
     #game-over {
       display: none;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    main {
+      margin-top: 3rem;
+    }
+
+    select,
+    button {
+      border: none;
+      padding: 0.5rem 1rem;
+    }
+
+    button {
+
+      background-color: #ededed;
+      color: black;
+      border-radius: 0.5rem;
     }
 
     #field {
@@ -74,7 +92,7 @@
   <main>
 
     <div id="game-over">
-      Game over <span>123</span>
+      Game over! Your Score: <span>123</span>
     </div>
 
     <div id="field"></div>
