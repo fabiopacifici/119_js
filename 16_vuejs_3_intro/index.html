@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <!--     
+  ❌ DONT DO THIS
+  Put everything inside #app
+  <h1 v-bind:class="cssClass">{{message}}</h1>
+ -->
+
+  <div id="app">
+    <!-- Your app vue goes here  -->
+
+
+
+    <!-- Text interpolation mustache syntax + v-bind -->
+    <h1 v-bind:class="cssClass">{{message}}</h1>
+
+    <p>{{content}}</p>
+    <p>{{username}}</p>
+
+
+    <!-- V- directives 
+    
+      v-model
+    -->
+
+
+    <input type="text" v-model="message">
+    <p>{{message.length}}</p>
+
+
+
+    <!-- v-on directive '@' -->
+
+    <button @click="greetings()">Click me</button>
+
+    <button @click="counter++">Increment</button>
+    {{counter}}
+
+
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
