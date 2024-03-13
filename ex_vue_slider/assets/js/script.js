@@ -34,7 +34,7 @@ createApp({
         prev() {
             console.log('prev');
             this.activeImage--
-            if(this.activeImage < 0){
+            if (this.activeImage < 0) {
                 this.activeImage = this.slides.length - 1
             }
         },
@@ -42,31 +42,33 @@ createApp({
         next() {
             console.log('next');
             this.activeImage++
-            if(this.activeImage === this.slides.length){
+            if (this.activeImage === this.slides.length) {
                 this.activeImage = 0
             }
         },
 
-        startAutoplay(){
+        startAutoplay() {
             //console.log('ciao');
-        
+
             this.intervalId = setInterval(() => {
                 console.log(this);
                 this.next();
             }, 3000)
         },
 
-        stopAutoplay(){
+        stopAutoplay() {
             clearInterval(this.intervalId);
         }
-        
+
 
     },
-    mounted(){
+    created() {
+        // code here is used when the application is in the created spot
+    },
+    mounted() {
         console.log(this.slides);
         // Start autoplay
         this.startAutoplay()
     }
-
 
 }).mount('#app')

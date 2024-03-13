@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Conditional Rendering</title>
+</head>
+
+<body>
+  <div id='app'>
+    <h1 v-if="isCool">Hello Vue3</h1>
+    <p v-else>Not so cool</p>
+
+
+    <!-- Vif/elseif/else -->
+
+    <p v-if="canDo === 'fly'">
+      You can fly
+    </p>
+    <p v-else-if="canDo === 'run'">
+      You can run
+    </p>
+    <p v-else-if="canDo === 'walk'">
+      You can walk
+    </p>
+    <p v-else>
+      You can do much more
+    </p>
+
+
+  </div>
+  <!-- Development only cdn, disable in production -->
+  <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+  <script src='./app.js'></script>
+</body>
+
+</html>
