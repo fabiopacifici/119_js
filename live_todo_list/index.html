@@ -1,12 +1,47 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang='en'>
+
 <head>
-	<title>My Website</title>
-	<link rel='stylesheet' href='./assets/css/style.css'>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<title>Document</title>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous' referrerpolicy='no-referrer' />
+	<link href='./assets/css/style.css' rel='stylesheet'>
+	<style>
+
+		.completed{
+			text-decoration: line-through;
+		}
+
+	</style>
 </head>
+
 <body>
-	<h1>Welcome to my website</h1>
-	<p>Some content goes here</p>
+	<div id='app'>
+		
+
+		<h1>My Todos</h1>
+
+
+		<input type="text" v-model.trim="newTask" placeholder="Type your task here" @keyup.enter="addTask()" required>
+		<small v-if="error" style="color:red">{{error}}</small>
+
+		<ul v-if="tasks.length > 0">
+			<li v-for="(task, index) in tasks">
+				
+				<span @click="taskCompleted(index)" :class="{'completed': completedTasks.includes(task) }" >{{task}}</span> 
+				<i class="fas fa-trash" @click="removeTask(index)"></i>
+			
+			</li>
+		</ul>
+		<p v-else>😎 Nothing left for today! Enjoy your day.</p>
+
+
+
+	</div>
+	<!-- Development only cdn, disable in production -->
+	<script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
 	<script src='./assets/js/script.js'></script>
 </body>
+
 </html>
